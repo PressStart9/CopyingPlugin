@@ -1,18 +1,21 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.pressstart9.copyingplugin</id>
-    <name>CopyingPlugin</name>
+    <id>com.github.pressstart9.pluginlabwork</id>
+    <name>PluginLabwork Template</name>
     <vendor>pressstart9</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.pressstart9.copyingplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.pressstart9.copyingplugin.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+    <actions>
+        <action id="pluginlabwork.addexistingfiles"
+                class="com.github.pressstart9.pluginlabwork.services.AddExistingFiles" text="Add existing files"
+                description="Copy folder or files from another project">
+            <add-to-group group-id="PasteGroup" anchor="after" relative-to-action="$Paste"/>
+        </action>
+        <action id="pluginlabwork.addtemplatefile" class="com.github.pressstart9.pluginlabwork.services.AddTemplateFile"
+                text="Copying Template" description="Create template file">
+            <add-to-group group-id="NewGroup" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>

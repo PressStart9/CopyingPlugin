@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# CopyingPlugin Changelog
+# PluginLabwork Changelog
 
 ## [Unreleased]
 ### Added
